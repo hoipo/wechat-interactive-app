@@ -14,22 +14,19 @@ module.exports = {
     module: {
         rules: [{
             test: /\.js|jsx$/,
-            exclude: /^node_modules$/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015', 'react']
-            }
+            exclude: /node_modules/,
+            loaders: ['react-hot-loader', 'babel-loader?presets[]=react,presets[]=es2015']
         }, {
             test: /\.css$/,
-            exclude: /^node_modules$/,
+            exclude: /node_modules/,
             use: ['style-loader', 'css-loader', 'postcss-loader'],
         }, {
             test: /\.less$/,
-            exclude: /^node_modules$/,
+            exclude: /node_modules/,
             use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
         }, {
             test: /\.(jpg|png)$/,
-            exclude: /^node_modules$/,
+            exclude: /node_modules/,
             use: 'url-loader',
         }]
     },
